@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script>
+    var app = angular.module("test", []);
+    app.controller("mydate", function($scope, $http) {
+      $scope.$watch('dateVal', function() {
+        fetch();
+      });
+    
+      function fetch() {
+        $scope.dateVal = $scope.dateVal == null ? Math.round(new Date().getTime() / 1000) : $scope.dateVal;
+        $http.get("https://timestamp-micro-service.herokuapp.com/" + $scope.dateVal).then(function(response) {
+          $scope.dat = response.data;
+        });
+      }
+    });
+  </script>
+</head>
+
+<body>
+
+
+  <div class="jumbotron">
+    <center>
+      <h1>Angular Js with http request</h1>
+      <p> Using time stamp </p>
+    </center>
+  </div>
+  <div class="container-fluid">
+    <div ng-app="test" ng-controller="mydate" class="col-xs-2 border">
+      Enter the date <input type="text" class="form-control" ng-model="dateVal"></input>
+      <hr> <br> Unix : {{dat.unix}}<br> Natural : {{dat.natural}}<br>
+    </div>
+  </div>
+</body>
+
+</html>
