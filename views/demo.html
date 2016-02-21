@@ -2,6 +2,7 @@
 <html>
 
 <head>
+
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
@@ -11,6 +12,21 @@
   <!-- Latest compiled JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <style type="text/css">
+    .jumbotron{
+      background-color:black;
+    }
+    body{
+      background-color:royalblue;
+      color:white;
+      
+    }
+    .border
+    {
+      border:solid;
+      border-color:black;
+    }
+  </style>
   <script>
     var app = angular.module("test", []);
     app.controller("mydate", function($scope, $http) {
@@ -29,8 +45,6 @@
 </head>
 
 <body>
-
-
   <div class="jumbotron">
     <center>
       <h1>Angular Js with http request</h1>
@@ -38,7 +52,8 @@
     </center>
   </div>
   <div class="container-fluid">
-    <div ng-app="test" ng-controller="mydate" class="col-xs-2 border">
+    <div class="col-xs-4"></div>
+    <div ng-app="test" ng-controller="mydate" class="col-xs-4 border">
       Enter the date <input type="text" class="form-control" ng-model="dateVal"></input>
       <hr> <br> Unix : {{dat.unix}}<br> Natural : {{dat.natural}}<br>
     </div>

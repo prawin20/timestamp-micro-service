@@ -1,13 +1,75 @@
-<h1>Timestamp microservice</h1>
-<br>
-Example usage:
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+ 
+    <style type="text/css">
+    .jumbotron{
+      background-color:black;
+    }
+    body{
+      background-color:royalblue;
+      color:white;
+      
+    }
+    .border
+    {
+      border:solid;
+      border-color:black;
+    }
+    a{
+        color:yellow;
+        white-space: normal;
+        word-wrap:break-word;
+    }
+    a:hover{
+       color:white;
+    }
+  </style>
+ 
+</head>
+<body>
+<div class="jumbotron">
+<center><h1>Timestamp Microservice</h1></center>
+</div>
+<div class="row">
+  <div class="col-xs-4">
+<h2>User Stories:</h2>
+<ul>
+  <li>
+   <h4>User Story:</h4> I can pass a string as a parameter, and it will check to see whether that string contains either a unix timestamp or a natural language date (example: January 1, 2016).    
+  </li>
+  <li>
+   <h4>User Story:</h4> If it does, it returns both the Unix timestamp and the natural language form of that date.    
+  </li>
+  <li>
+   <h4>User Story:</h4> If it does not contain a date or Unix timestamp, it returns null for those properties.  
+  </li>
+</ul>
+</div>
+<div class="col-xs-4">
+<h2>Example usage:</h2>
 <ul>
 <li><a href="/December 15, 2015">https://timestamp-micro-service.herokuapp.com/December 15, 2015</a></li>
 <li><a href="/1450137600">https://timestamp-micro-service.herokuapp.com/1450137600</a></li>
 </ul>
-<br>
-Example output:
+
+<h2>Example output:</h2>
 { "unix": 1450137600, "natural": "December 15, 2015" }
-<br>
-<br>
+</div>
+<div class="col-xs-4">
+<h2>Api usage with Angular js</h2>
 Demo Usage of Api With Angular js: <a href="/demo.html">Demo</a>
+</div>
+</div>
+</body>
+</html>
